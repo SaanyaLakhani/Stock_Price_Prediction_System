@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Stock Prediction Logo" class="logo">
+
+        <h2>Stock Price Prediction</h2>
+
+        <label for="stock">Choose a Stock:</label>
+        <select id="stock">
+            <option value="RELIANCE.NS">Reliance Industries (RELIANCE)</option>
+            <option value="TCS.NS">Tata Consultancy Services (TCS)</option>
+            <option value="HDFCBANK.NS">HDFC Bank (HDFCBANK)</option>
+            <option value="INFY.NS">Infosys (INFY)</option>
+            <option value="ICICIBANK.NS">ICICI Bank (ICICIBANK)</option>
+            <option value="HINDUNILVR.NS">Hindustan Unilever (HINDUNILVR)</option>
+            <option value="SBIN.NS">State Bank of India (SBIN)</option>
+            <option value="BHARTIARTL.NS">Bharti Airtel (BHARTIARTL)</option>
+            <option value="KOTAKBANK.NS">Kotak Mahindra Bank (KOTAKBANK)</option>
+            <option value="ITC.NS">ITC Ltd (ITC)</option>
+            <option value="LT.NS">Larsen & Toubro (LT)</option>
+            <option value="AXISBANK.NS">Axis Bank (AXISBANK)</option>
+            <option value="HCLTECH.NS">HCL Technologies (HCLTECH)</option>
+            <option value="MARUTI.NS">Maruti Suzuki (MARUTI)</option>
+            <option value="BAJFINANCE.NS">Bajaj Finance (BAJFINANCE)</option>
+            <option value="ASIANPAINT.NS">Asian Paints (ASIANPAINT)</option>
+            <option value="TITAN.NS">Titan Company (TITAN)</option>
+            <option value="SUNPHARMA.NS">Sun Pharma (SUNPHARMA)</option>
+            <option value="ULTRACEMCO.NS">UltraTech Cement (ULTRACEMCO)</option>
+            <option value="WIPRO.NS">Wipro (WIPRO)</option>
+            <option value="ONGC.NS">Oil & Natural Gas Corp (ONGC)</option>
+            <option value="NTPC.NS">NTPC Ltd (NTPC)</option>
+            <option value="POWERGRID.NS">Power Grid Corporation (POWERGRID)</option>
+            <option value="JSWSTEEL.NS">JSW Steel (JSWSTEEL)</option>
+            <option value="TATASTEEL.NS">Tata Steel (TATASTEEL)</option>
+            <option value="TECHM.NS">Tech Mahindra (TECHM)</option>
+            <option value="INDUSINDBK.NS">IndusInd Bank (INDUSINDBK)</option>
+            <option value="GRASIM.NS">Grasim Industries (GRASIM)</option>
+            <option value="ADANIENT.NS">Adani Enterprises (ADANIENT)</option>
+            <option value="COALINDIA.NS">Coal India (COALINDIA)</option>
+            <option value="BAJAJFINSV.NS">Bajaj Finserv (BAJAJFINSV)</option>
+            <option value="TATAMOTORS.NS">Tata Motors (TATAMOTORS)</option>
+            <option value="M&M.NS">Mahindra & Mahindra (M&M)</option>
+            <option value="BPCL.NS">Bharat Petroleum (BPCL)</option>
+            <option value="CIPLA.NS">Cipla Ltd (CIPLA)</option>
+            <option value="HEROMOTOCO.NS">Hero MotoCorp (HEROMOTOCO)</option>
+            <option value="BRITANNIA.NS">Britannia Industries (BRITANNIA)</option>
+            <option value="DIVISLAB.NS">Divi's Laboratories (DIVISLAB)</option>
+            <option value="APOLLOHOSP.NS">Apollo Hospitals (APOLLOHOSP)</option>
+            <option value="EICHERMOT.NS">Eicher Motors (EICHERMOT)</option>
+            <option value="BAJAJ-AUTO.NS">Bajaj Auto (BAJAJ-AUTO)</option>
+            <option value="DRREDDY.NS">Dr. Reddy's Laboratories (DRREDDY)</option>
+            <option value="HDFCLIFE.NS">HDFC Life Insurance (HDFCLIFE)</option>
+            <option value="TATACONSUM.NS">Tata Consumer Products (TATACONSUM)</option>
+            <option value="SBILIFE.NS">SBI Life Insurance (SBILIFE)</option>
+            <option value="ICICIPRULI.NS">ICICI Prudential Life Insurance (ICICIPRULI)</option>
+            <option value="UPL.NS">UPL Ltd (UPL)</option>
+        </select>
+
+        <div class="input-group">
+            <label for="open">Open Price:</label>
+            <input type="number" id="open" step="0.01" placeholder="Enter Open Price" required>
+        </div>
+
+        <div class="input-group">
+            <label for="high">High Price:</label>
+            <input type="number" id="high" step="0.01" placeholder="Enter High Price" required>
+        </div>
+
+        <div class="input-group">
+            <label for="low">Low Price:</label>
+            <input type="number" id="low" step="0.01" placeholder="Enter Low Price" required>
+        </div>
+
+        <button onclick="predictStock()">Predict</button>
+
+        <h3>PREDICTED CLOSE PRICE: <span id="predicted_close"></span></h3>
+        <h3>RECOMMENDATION: <span id="recommendation"></span></h3>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
